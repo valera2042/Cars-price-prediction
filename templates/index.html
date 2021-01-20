@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Car Selling Price prediction</h1>
+	<h1>
+	<h1>	
+	<h2>Please enter the Present Price of the car, whether the car has fuel engine type (1) or not (0),<h2>
+	<h2> and whether you plan to purchase it from a dealer (1) or from a individual owner (0)<h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Present_Price" placeholder="Present_Price" required="required" />
+        <input type="text" name="Fuel_Type_Petrol" placeholder="Fuel_Type_Petrol" required="required" />
+		<input type="text" name="Seller_Type_Individual" placeholder="Seller_Type_Individual" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
